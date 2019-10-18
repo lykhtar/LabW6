@@ -1,134 +1,143 @@
-public class Codebeautify {
- Schedule ScheduleObject;
+   public class MyPojo {
 
+        private Schedule schedule;
 
- // Getter Methods 
+        public Schedule getSchedule() {
+            return schedule;
+        }
 
- public Schedule getSchedule() {
-  return ScheduleObject;
- }
+        public void setSchedule(Schedule schedule) {
+            this.schedule = schedule;
+        }
 
- // Setter Methods 
+        @Override
+        public String toString() {
+            return "ClassPojo [schedule = " + schedule + "]";
+        }
+    }
 
- public void setSchedule(Schedule scheduleObject) {
-  this.ScheduleObject = scheduleObject;
- }
-}
-public class Schedule {
- Lessons LessonsObject;
- Teachers TeachersObject;
+    public class Schedule {
 
+        private Teachers teachers;
+        private Lessons lessons;
 
- // Getter Methods 
+        public Teachers getTeachers() {
+            return teachers;
+        }
 
- public Lessons getLessons() {
-  return LessonsObject;
- }
+        public void setTeachers(Teachers teachers) {
+            this.teachers = teachers;
+        }
 
- public Teachers getTeachers() {
-  return TeachersObject;
- }
+        public Lessons getLessons() {
+            return lessons;
+        }
 
- // Setter Methods 
+        public void setLessons(Lessons lessons) {
+            this.lessons = lessons;
+        }
 
- public void setLessons(Lessons lessonsObject) {
-  this.LessonsObject = lessonsObject;
- }
+        @Override
+        public String toString() {
+            return "ClassPojo [teachers = " + teachers + ", lessons = " + lessons + "]";
+        }
+    }
 
- public void setTeachers(Teachers teachersObject) {
-  this.TeachersObject = teachersObject;
- }
-}
-public class Teachers {
- private String name;
- Lesson LessonObject;
+    public class Lessons {
 
+        private String name;
+        private String classroom;
+        private String day;
 
- // Getter Methods 
+        public String getName() {
+            return name;
+        }
 
- public String getName() {
-  return name;
- }
+        public void setName(String name) {
+            this.name = name;
+        }
 
- public Lesson getLesson() {
-  return LessonObject;
- }
+        public String getClassroom() {
+            return classroom;
+        }
 
- // Setter Methods 
+        public void setClassroom(String classroom) {
+            this.classroom = classroom;
+        }
 
- public void setName(String name) {
-  this.name = name;
- }
+        public String getDay() {
+            return day;
+        }
 
- public void setLesson(Lesson lessonObject) {
-  this.LessonObject = lessonObject;
- }
-}
-public class Lesson {
- private String name;
- private String numles;
- private String namstud;
+        public void setDay(String day) {
+            this.day = day;
+        }
 
+        @Override
+        public String toString() {
+            return "ClassPojo [name = " + name + ", classroom = " + classroom + ", day = " + day + "]";
+        }
+    }
 
- // Getter Methods 
+    public class Teachers {
 
- public String getName() {
-  return name;
- }
+        private String name;
+        private Lesson lesson;
 
- public String getNumles() {
-  return numles;
- }
+        public String getName() {
+            return name;
+        }
 
- public String getNamstud() {
-  return namstud;
- }
+        public void setName(String name) {
+            this.name = name;
+        }
 
- // Setter Methods 
+        public Lesson getLesson() {
+            return lesson;
+        }
 
- public void setName(String name) {
-  this.name = name;
- }
+        public void setLesson(Lesson lesson) {
+            this.lesson = lesson;
+        }
 
- public void setNumles(String numles) {
-  this.numles = numles;
- }
+        @Override
+        public String toString() {
+            return "ClassPojo [name = " + name + ", lesson = " + lesson + "]";
+        }
+    }
 
- public void setNamstud(String namstud) {
-  this.namstud = namstud;
- }
-}
-public class Lessons {
- private String name;
- private String day;
- private String classroom;
+    public class Lesson {
 
+        private String namstud;
+        private String name;
+        private String numles;
 
- // Getter Methods 
+        public String getNamstud() {
+            return namstud;
+        }
 
- public String getName() {
-  return name;
- }
+        public void setNamstud(String namstud) {
+            this.namstud = namstud;
+        }
 
- public String getDay() {
-  return day;
- }
+        public String getName() {
+            return name;
+        }
 
- public String getClassroom() {
-  return classroom;
- }
+        public void setName(String name) {
+            this.name = name;
+        }
 
- // Setter Methods 
+        public String getNumles() {
+            return numles;
+        }
 
- public void setName(String name) {
-  this.name = name;
- }
+        public void setNumles(String numles) {
+            this.numles = numles;
+        }
 
- public void setDay(String day) {
-  this.day = day;
- }
-
- public void setClassroom(String classroom) {
-  this.classroom = classroom;
- }
-}
+        @Override
+        public String toString() {
+            return "ClassPojo [namstud = " + namstud + ", name = " + name + ", numles = " + numles + "]";
+        }
+    }
