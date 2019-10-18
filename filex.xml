@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schedule>
+    <lessons>
+        <name></name>
+        <day></day>
+        <classroom></classroom>
+    </lessons>
+    <teachers>
+        <name></name>
+        <lesson>
+            <name></name>
+            <numles></numles>
+            <namstud></namstud>
+        </lesson>
+    </teachers>
+</schedule>
