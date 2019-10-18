@@ -1,0 +1,134 @@
+public class Codebeautify {
+ Schedule ScheduleObject;
+
+
+ // Getter Methods 
+
+ public Schedule getSchedule() {
+  return ScheduleObject;
+ }
+
+ // Setter Methods 
+
+ public void setSchedule(Schedule scheduleObject) {
+  this.ScheduleObject = scheduleObject;
+ }
+}
+public class Schedule {
+ Lessons LessonsObject;
+ Teachers TeachersObject;
+
+
+ // Getter Methods 
+
+ public Lessons getLessons() {
+  return LessonsObject;
+ }
+
+ public Teachers getTeachers() {
+  return TeachersObject;
+ }
+
+ // Setter Methods 
+
+ public void setLessons(Lessons lessonsObject) {
+  this.LessonsObject = lessonsObject;
+ }
+
+ public void setTeachers(Teachers teachersObject) {
+  this.TeachersObject = teachersObject;
+ }
+}
+public class Teachers {
+ private String name;
+ Lesson LessonObject;
+
+
+ // Getter Methods 
+
+ public String getName() {
+  return name;
+ }
+
+ public Lesson getLesson() {
+  return LessonObject;
+ }
+
+ // Setter Methods 
+
+ public void setName(String name) {
+  this.name = name;
+ }
+
+ public void setLesson(Lesson lessonObject) {
+  this.LessonObject = lessonObject;
+ }
+}
+public class Lesson {
+ private String name;
+ private String numles;
+ private String namstud;
+
+
+ // Getter Methods 
+
+ public String getName() {
+  return name;
+ }
+
+ public String getNumles() {
+  return numles;
+ }
+
+ public String getNamstud() {
+  return namstud;
+ }
+
+ // Setter Methods 
+
+ public void setName(String name) {
+  this.name = name;
+ }
+
+ public void setNumles(String numles) {
+  this.numles = numles;
+ }
+
+ public void setNamstud(String namstud) {
+  this.namstud = namstud;
+ }
+}
+public class Lessons {
+ private String name;
+ private String day;
+ private String classroom;
+
+
+ // Getter Methods 
+
+ public String getName() {
+  return name;
+ }
+
+ public String getDay() {
+  return day;
+ }
+
+ public String getClassroom() {
+  return classroom;
+ }
+
+ // Setter Methods 
+
+ public void setName(String name) {
+  this.name = name;
+ }
+
+ public void setDay(String day) {
+  this.day = day;
+ }
+
+ public void setClassroom(String classroom) {
+  this.classroom = classroom;
+ }
+}
