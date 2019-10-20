@@ -6,11 +6,9 @@
         <classroom></classroom>
     </lessons>
     <teachers>
-        <name></name>
-        <lesson>
-            <name></name>
-            <numles></numles>
-            <namstud></namstud>
-        </lesson>
+        <tname></tname>
+        <lesson></lesson>
+        <num></num>
+        <numst></numst>
     </teachers>
 </schedule>
