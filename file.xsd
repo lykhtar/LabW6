@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="utf-16"?>
 <xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:element name="schedule">
+  <xs:element name="marsh">
     <xs:complexType>
       <xs:sequence>
-        <xs:element name="lessons">
+        <xs:element name="schedule">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="name" />
-              <xs:element name="day" />
-              <xs:element name="classroom" />
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
-        <xs:element name="teachers">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="name" />
-              <xs:element name="lesson">
+              <xs:element name="lessons">
                 <xs:complexType>
                   <xs:sequence>
-                    <xs:element name="name" />
+                    <xs:element name="nameles" />
+                    <xs:element name="day" />
+                    <xs:element name="classroom" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="teachers">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="namet" />
+                    <xs:element name="lesson" />
                     <xs:element name="numles" />
-                    <xs:element name="namstud" />
+                    <xs:element name="numst" />
                   </xs:sequence>
                 </xs:complexType>
               </xs:element>
