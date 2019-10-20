@@ -1,160 +1,39 @@
-public class MyPojo {
+public class Ser implements Serializable {
 
-    private Schedule schedule;
-
-    public Schedule getSchedule() {
-        return schedule;
-    }
-
-    public void setSchedule(Schedule schedule) {
-        this.schedule = schedule;
-    }
-
-    @Override
-    public String toString() {
-        return "Pojo [schedule = " + schedule + "]";
-    }
-}
-
-public class Schedule {
-
-    private Teachers teachers;
-    private Lessons lessons;
-
-    public Teachers getTeachers() {
-        return teachers;
-    }
-
-    public void setTeachers(Teachers teachers) {
-        this.teachers = teachers;
-    }
-
-    public Lessons getLessons() {
-        return lessons;
-    }
-
-    public void setLessons(Lessons lessons) {
-        this.lessons = lessons;
-    }
-
-    public String toString() {
-        return "Schedule [teachers = " + teachers + ", lessons = " + lessons + "]";
-    }
-}
-
-public class Lessons {
-
-    private String name;
+    private String namet;
+    private String numst;
     private String classroom;
+    private String nameles;
     private String day;
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getClassroom() {
-        return classroom;
-    }
-
-    public void setClassroom(String classroom) {
-        this.classroom = classroom;
-    }
-
-    public String getDay() {
-        return day;
-    }
-
-    public void setDay(String day) {
-        this.day = day;
-    }
-
-    @Override
-    public String toString() {
-        return "Lessons [name = " + name + ", classroom = " + classroom + ", day = " + day + "]";
-    }
-}
-
-public class Teachers {
-
-    private String name;
-    private Lesson lesson;
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public Lesson getLesson() {
-        return lesson;
-    }
-
-    public void setLesson(Lesson lesson) {
-        this.lesson = lesson;
-    }
-
-    @Override
-    public String toString() {
-        return "Teachers[name = " + name + ", lesson = " + lesson + "]";
-    }
-}
-
-public class Lesson {
-
-    private String namstud;
-    private String name;
     private String numles;
 
-    public String getNamstud() {
-        return namstud;
-    }
-
-    public void setNamstud(String namstud) {
-        this.namstud = namstud;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getNumles() {
-        return numles;
-    }
-
-    public void setNumles(String numles) {
+    public Ser(String namet, String numst, String classroom, String nameles, String day, String numles) {
+        this.namet = namet;
+        this.numst = numst;
+        this.classroom = classroom;
+        this.day = day;
+        this.nameles = nameles;
         this.numles = numles;
     }
 
-    @Override
     public String toString() {
-        return "Lesson [namstud = " + namstud + ", name = " + name + ", numles = " + numles + "]";
+        return "namet = " + namet + ", numst = " + numst + ", classroom = " + classroom + ", nameles = " + nameles + ", day = " + day + ", numles = " + numles;
+
     }
 }
 
-import java.io.*;
-
+//класс для сериализации и десериализации
 public class Serializator {
-
-    public boolean serialization(Ser s, String fileName) {
+// сериализация
+    boolean serialization(Ser s, String fileName) {
         boolean flag = false;
-        File f = new File("ser.txt");
+        File f = new File("E:\\КПО\\Lab6\\file.txt");
         ObjectOutputStream ostream = null;
         try {
             FileOutputStream fos = new FileOutputStream(f);
             if (fos != null) {
                 ostream = new ObjectOutputStream(fos);
-                ostream.writeObject(s);
-                // сериализация
+                ostream.writeObject(s); 
                 flag = true;
             }
         } catch (FileNotFoundException e) {
@@ -174,16 +53,15 @@ public class Serializator {
         }
         return flag;
     }
-
+// десериализация
     public Ser deserialization(String fileName) throws InvalidObjectException {
-        File fr = new File("ser.txt");
+        File fr = new File("E:\\КПО\\Lab6\\file.txt");
         ObjectInputStream istream = null;
         try {
             FileInputStream fis = new FileInputStream(fr);
             istream = new ObjectInputStream(fis);
-        // десериализация
-            Ser ser = (Ser) istream.readObject();
-            return ser;
+            Ser st = (Ser) istream.readObject();
+            return st;
         } catch (ClassNotFoundException ce) {
             System.err.println("Класс не существует: " + ce);
         } catch (FileNotFoundException e) {
@@ -204,26 +82,24 @@ public class Serializator {
         throw new InvalidObjectException("объект не восстановлен");
     }
 }
-
-import java.io.InvalidObjectException;
-
+//главный класс запускающий сериализацию и десериализацию
 public class RunnerSerialization {
 
-    public static void main(String[] args) {// создание и запись объекта
-        Ser ob = new Ser("1", "1", "math", "Kate", "Math");
+    public static void main(String[] args) {
+// создание и запись объекта
+        Ser ob = new Ser("Ivanov", "12", "223", "Math", "Thursday", "2");
         System.out.println(ob);
-        String file = "E:\\КПО\\LabW6\\save.txt";
+        String file = "E:\\КПО\\Lab6\\file.txt";
         Serializator sz = new Serializator();
         boolean b = sz.serialization(ob, file);
-
-// изменение значения static-поля
 // чтение и вывод объекта
         Ser res = null;
         try {
             res = sz.deserialization(file);
-        } catch (InvalidObjectException e) {// обработка
+        } catch (InvalidObjectException e) { // обработка
             e.printStackTrace();
         }
         System.out.println(res);
     }
 }
+
